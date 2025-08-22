@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "BACKEND FOR ERINO HAHAHAHA",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "Geoff-Robin",
+  "license": "ISC"
+}
