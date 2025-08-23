@@ -3,6 +3,7 @@ import { api } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "@/components/navbar";
 
 export default function DashboardPage() {
     const navigate = useNavigate();
@@ -26,8 +27,7 @@ export default function DashboardPage() {
     else
     return (
         <div>
-            <h1>Dashboard</h1>
-            <Button onClick={handleLogout}>Logout</Button>
+            <Navbar onLogout={handleLogout} />
         </div>
     );
 }

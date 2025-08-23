@@ -42,7 +42,7 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader className="text-center">
-          <CardTitle className="text-xl">Welcome to Lead Management System</CardTitle>
+          <CardTitle className="text-xl">Lead Management System</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin}>
