@@ -5,6 +5,7 @@ import RegisterPage from './Pages/registerPage'
 import DashboardPage from './Pages/dashboardPage'
 import { AuthProvider } from './context/AuthContext'
 import { LeadPage } from '@/Pages/leadPage'
+import { LeadForm } from './Pages/leadForm'
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="/dashboard" element={<DashboardPage/>} />
         <Route path="/leads/:id" element={<LeadPage />} />
+        <Route path="/newLead" element={<LeadForm />} />
       </Routes>
     </AuthProvider>
   )

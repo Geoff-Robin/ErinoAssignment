@@ -33,17 +33,17 @@ export function LeadsTable() {
   const pageSize = 20;
 
   const columnDefs = [
-    { headerName: 'Name', field: 'name', filter: "agTextColumnFilter" },
-    { headerName: 'Email', field: 'email', filter: "agTextColumnFilter" },
-    { headerName: 'Phone', field: 'phone', filter: "agTextColumnFilter" },
-    { headerName: 'Source', field: 'source', filter: "agTextColumnFilter" },
-    { headerName: 'Status', field: 'status', filter: "agTextColumnFilter" },
-    { headerName: 'Score', field: 'score', filter: "agTextColumnFilter" },
-    { headerName: 'Lead Value', field: 'lead_value', filter: "agTextColumnFilter" },
-    { headerName: 'Last Activity', field: 'last_activity_at', filter: "agTextColumnFilter" },
-    { headerName: 'Qualified', field: 'is_qualified', filter: "agTextColumnFilter" },
-    { headerName: 'Created At', field: 'createdAt', filter: "agTextColumnFilter" },
-    { headerName: 'Updated At', field: 'updatedAt', filter: "agTextColumnFilter" },
+    { headerName: 'Name', field: 'name',},
+    { headerName: 'Email', field: 'email', },
+    { headerName: 'Phone', field: 'phone', },
+    { headerName: 'Source', field: 'source', },
+    { headerName: 'Status', field: 'status', },
+    { headerName: 'Score', field: 'score', },
+    { headerName: 'Lead Value', field: 'lead_value', },
+    { headerName: 'Last Activity', field: 'last_activity_at', },
+    { headerName: 'Qualified', field: 'is_qualified', },
+    { headerName: 'Created At', field: 'createdAt', },
+    { headerName: 'Updated At', field: 'updatedAt', },
     {
       headerName: 'Actions',
       cellRenderer: 'deleteButtonRenderer',
@@ -103,6 +103,7 @@ export function LeadsTable() {
         components={{ deleteButtonRenderer: DeleteButtonRenderer }}
         onGridReady={onGridReady}
         onRowClicked={onRowClicked}
+        defaultColDef={{ filter: true, sortable: true }}
       />
     </div>
   );
