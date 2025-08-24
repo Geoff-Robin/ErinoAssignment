@@ -7,7 +7,7 @@ export function cn(...inputs) {
 }
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_DEV_API_URL || '',
+  baseURL: import.meta.env.VITE_ENV === 'development' ? import.meta.env.VITE_DEV_API_URL : import.meta.env.VITE_PROD_API_URL,
   withCredentials: true
 })
 
