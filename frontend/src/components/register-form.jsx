@@ -12,11 +12,13 @@ import { Link,useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { api } from "@/lib/utils"
 import { useAuth } from "@/context/AuthContext"
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function RegisterForm({
     className,
     ...props
 }) {
+    const [error, setError] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -46,6 +48,11 @@ export function RegisterForm({
                     <CardTitle className="text-xl">Lead Management System</CardTitle>
                 </CardHeader>
                 <CardContent>
+                    {error && (
+                        <Alert className="mb-6 border-red-200 bg-red-50">
+                            <AlertDescription className="text-red-800">{error}</AlertDescription>
+                        </Alert>
+                    )}
                     <form onSubmit={handleRegister}>
                         <div className="grid gap-6">
                             <div className="grid gap-6">

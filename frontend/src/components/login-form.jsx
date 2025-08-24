@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Link, useNavigate } from "react-router-dom"
 import { api } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function LoginForm({
   className,
@@ -19,6 +20,7 @@ export function LoginForm({
 }) {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const { setUser } = useAuth();
   const navigate = useNavigate();
   const handleLogin = async (e) => {
@@ -32,6 +34,7 @@ export function LoginForm({
         setUser(response.data.id);
         navigate("/dashboard");
       }).catch((error) => {
+        setError(error.response.data.message);
         console.error(error);
       });
     } catch (err) {
@@ -45,6 +48,11 @@ export function LoginForm({
           <CardTitle className="text-xl">Lead Management System</CardTitle>
         </CardHeader>
         <CardContent>
+          {error && (
+            <Alert className="mb-6 border-red-200 bg-red-50">
+              <AlertDescription className="text-red-800">{error}</AlertDescription>
+            </Alert>
+          )}
           <form onSubmit={handleLogin}>
             <div className="grid gap-6">
               <div className="grid gap-6">
